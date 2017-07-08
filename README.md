@@ -107,8 +107,33 @@
 - Logic – PL vs FOL, translation of English statement to FOL statement
   - PL assumes the world contains facts, FOL assumes the world contains objects, relationships, and function.
   - FOL has more elements than PL which are variables, functions, and quantifiers.
+  - FOL provides increased expressive power in comparison with PL
 
 - Knowledge Representation – Logic, ontology, agents
+  - Ontology
+    - The study of existence, of all kinds of entities that make up the world
+    - A representation of a shared domain of interest that utilizes a common vocabulary to describe the classes, relations, functions and other similar objects of interest
+    - Why Develop an Ontology
+      - To share common understanding of the structure of information among people or software agents
+      - To enable reuse of domain knowledge
+      - To make domain assumptions explicit
+      - To separate domain knowledge from the operational knowledge
+      - To analyze domain knowledge
+    - Knowledge Engineering Methodology
+      1. Determine the domain and scope of the ontology
+      1. Consider re-using existing ontologies
+      1. Enumerate important terms in the ontology
+      1. Define the classes and class hierarchy
+      1. Define the properties / slots /roles of the classes
+      1. Define the facets / role restrictions
+      1. Create instances
+  - Agents
+    - An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
+    - Four agent structures
+      - Simple reflex (Not coming out)
+      - Model-based reflex
+      - Goal-based
+      - Utility
 
 ### Production and Expert Systems
 
