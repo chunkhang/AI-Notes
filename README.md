@@ -217,14 +217,14 @@
 - **Compute the certainty factor of a hypothesis given several rules with individual certainty factors**
 - **Interpret the resulting numerical answer in regular English**
 
-  Name | Certainty Value
+  | Name | Certainty Value |
   -----|----------------
-  <p align="center">Definitely not</p> | -1.0
-  <p align="center">Almost certainly not</p> | -0.8
-  <p align="center">Probably not</p> | -0.6
-  <p align="center">Maybe not</p> | -0.4
-  <p align="center">Unknown</p> | -0.2 to +0.2
-  <p align="center">Maybe</p> | +0.4
-  <p align="center">Probably</p> | +0.6
-  <p align="center">Almost certainly</p> | +0.8
-  <p align="center">Definitely</p> | +1.0
+  |<p align="center">Definitely not</p> | -1.0 |
+  |<p align="center">Almost certainly not</p> | -0.8 |
+  |<p align="center">Probably not</p> | -0.6 |
+  |<p align="center">Maybe not</p> | -0.4 |
+  |<p align="center">Unknown</p> | -0.2 to +0.2 |
+  |<p align="center">Maybe</p> | +0.4 |
+  |<p align="center">Probably</p> | +0.6 |
+  |<p align="center">Almost certainly</p> | +0.8 |
+  |<p align="center">Definitely</p> | +1.0 |
