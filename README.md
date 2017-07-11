@@ -111,6 +111,9 @@
 
 ## Chapter 3 - Logic and Knowledge Representation
 
+- **Logic**
+  - A formal language that consists of syntax and semantic.
+
 - **Discuss the limitations of propositional logic**
   - Operates with constant object only
   - No domain context and no domain variable
@@ -120,11 +123,41 @@
     - Statements referring to groups of objects requires exhaustive enumeration of group
     - Statements about similar objects and relations need to be enumerated
 
+- **Primary goal of knowledge representation**
+  - To enable an intelligent entity (program) with a knowledge base to allow it to make intelligent decisions about its environment.
+
 ### Logic – PL vs FOL, translation of English statement to FOL statement
 
-- PL assumes the world contains facts, FOL assumes the world contains objects, relationships, and function.
+- PL assumes the world contains facts, FOL assumes the world contains objects, relationships or properties, and function.
 - FOL has more elements than PL which are variables, functions, and quantifiers.
 - FOL provides increased expressive power in comparison with PL
+
+- **PEAS**
+  - Performance
+  - Environment
+  - Actuators
+  - Sensors
+
+- **Wumpus World Problem Foundation**
+  - Transition model not known
+    - Does not know which Forward actions are fatal
+    - Discovering the locations of pits and wumpus completes the agent's knowledge of the transition model
+  - Main challenge is its initial ignorance of the configuration of the environment
+  - Overcoming this ignorance seems to require logical reasoning
+
+- **Basic element of FOL**
+  - Constant symbols -> Objects
+  - Predicate symbols -> Relations
+  - Function symbols -> Functional relations
+  - Variables
+  - Connectives
+  - Equalities
+  - Quantifiers
+
+- **Diagnostic rule**
+  - Infer cause from effect
+- **Causal rule**
+  - Infer effect from cause (model based reasoning)
 
 ### Knowledge Representation – Logic, ontology, agents
 
@@ -134,12 +167,22 @@
 - **Ontology**
   - The study of existence, of all kinds of entities that make up the world
   - A representation of a shared domain of interest that utilizes a common vocabulary to describe the classes, relations, functions and other similar objects of interest
+  - Ideal for sharing knowledge over the Internet
   - **Why Develop an Ontology**
     - To share common understanding of the structure of information among people or software agents
+      - Agents can extract and aggregate information from different Web sites. The agents can use this aggregated information to answer user queries or as input data to other applications.
     - To enable reuse of domain knowledge
+      - For example, models for many different domains need to represent the notion of time
     - To make domain assumptions explicit
+      - Makes it possible to change these assumptions easily if our knowledge about the domain changes
     - To separate domain knowledge from the operational knowledge
     - To analyze domain knowledge
+  - Development process
+    - Define classes in the ontology
+    - Arrange the classes in a taxonomic (subclass-superclass) hierarchy
+    - Define properties / slots / roles by describing their allowed values (facets / role restrictions)
+    - Fill in the values for the properties / slots / roles of individual instances
+
   - **Knowledge Engineering Methodology**
     1. Determine the domain and scope of the ontology
     1. Consider re-using existing ontologies
@@ -150,12 +193,29 @@
     1. Create instances
 
 - **Agents**
+  - Environment
+    - Fully observable vs Partially observable
+    - Deterministic vs Stochastic
+    - Episodic vs Sequencial
+    - Static vs Dynamic
+    - Discrete vs Continuous
+    - Single-agent vs Multi-agent
+  - Agent program's difference with agent function
+    - Agent function takes the entire percept sequence
+    - Agent program takes just the current percept as its input since nothing more is available from the environment
+
   - An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
   - Four agent structures
     - Simple reflex (Not coming out) agents
     - Model-based reflex agents
+      - Ideal for tackling partially observable environments
+      - Current percept is combined with the old internal state to generate the updated description of the current state, based on the agent's model of how the world works.
     - Goal-based agents
+      - Goal information
+      - The agent program can combine goal information with information about the results of possible actions (the same information as was used in the model-based agent) in order to choose actions that achieve the goal
     - Utility-based agents
+      - Performance measure of how happy
+      - If one world state is preferred to another, then it has higher utility for the agent.
   - **Describe the qualities an ideal agent should possess**
     - A rational agent chooses whichever action that is expected to maximize the value of performance measure given the percept sequence to date and prior knowledge of the environment. The definition requires information gathering to maximim future rewards. It also requires the agent to learn from percepts hence extending prior knowledge. The agent must be autonomy to compensate for incorrect prior knowledge through updating from environment.
 
@@ -278,7 +338,7 @@
 
 - **Knowledge engineering process**
   1. KE established dialogue with human expert in order to elicit expert's knowledge
-  1. KE then codes the knowledge explicitly into KBB
+  1. KE then codes the knowledge explicitly into KB
   1. Expert then evaluates the ES and gives feedback to KE
   1. Process is repeated until system's performance is judged to be satisfactory by the expert.
 
