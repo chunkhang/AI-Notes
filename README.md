@@ -9,6 +9,8 @@
 
 ## Coverage
 
+## Chapter 1 - Fundamental issues of AI
+
 ### Typical characteristics and problem-solving approaches of an AI problem
 
 - **Typical Problem Characteristics**
@@ -40,7 +42,9 @@
     - Problem-solving agent chooses a cost function that reflects its own performance measure
     - Relevant if more than one path leads to the goal, and we want the shortest path
 
-### Search
+---
+
+## Chapter 2 - Search
 
 - **Differentiate among the search algorithms**
   - Tree Search Algorithms
@@ -104,6 +108,10 @@
     - Stop evaluating this branch any further
     - Prune
 
+---
+
+## Chapter 3 - Logic and Knowledge Representation
+
 - Logic – PL vs FOL, translation of English statement to FOL statement
   - PL assumes the world contains facts, FOL assumes the world contains objects, relationships, and function.
   - FOL has more elements than PL which are variables, functions, and quantifiers.
@@ -130,12 +138,14 @@
   - Agents
     - An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
     - Four agent structures
-      - Simple reflex (Not coming out)
-      - Model-based reflex
-      - Goal-based
-      - Utility
+      - Simple reflex (Not coming out) agents
+      - Model-based reflex agents
+      - Goal-based agents
+      - Utility-based agents
 
-### Production and Expert Systems
+---
+
+### Chapter 3 & 4 Production and Expert Systems
 
 - Major components in an expert system
   - Knowledge base
@@ -199,19 +209,21 @@
   - Is the problem-solving knowledge mainly heuristic and uncertain?
 - **justify design/inference decision/recommendation**
 
-### Uncertainty
+## Chapter 6 - Uncertainty
 
 - **Differentiate between conjunctive and disjunctive rules**
   - Conjunctive rule will only fire when both of the facts are true or both of the condition are satisfied. However, disjunctive rule will fire when either of the facts or either of the condition is true.
   - In order to calculate certainty factor for conjunctive rule, minimum value of certainty factor among the facts is used. While for disjunctive rule, maximum value of certainty factor among the facts is used.
 - **Compute the certainty factor of a hypothesis given several rules with individual certainty factors**
 - **Interpret the resulting numerical answer in regular English**
-  - Definitely not -1.0
-  - Almost certainly not -0.8
-  - Probably not -0.6
-  - Maybe not -0.4
-  - Unknown -0.2 to +0.2
-  - Maybe +0.4
-  - Probably +0.6
-  - Almost certainly +0.8
-  - Definitely +1.0
+  Name | Certainty Value
+  -----|----------------
+  <p align="center">Definitely not</p> | -1.0
+  <p align="center">Almost certainly not</p> | -0.8
+  <p align="center">Probably not</p> | -0.6
+  <p align="center">Maybe not</p> | -0.4
+  <p align="center">Unknown</p> | -0.2 to +0.2
+  <p align="center">Maybe</p> | +0.4
+  <p align="center">Probably</p> | +0.6
+  <p align="center">Almost certainly</p> | +0.8
+  <p align="center">Definitely</p> | +1.0
