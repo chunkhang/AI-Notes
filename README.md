@@ -216,6 +216,7 @@
   - In order to calculate certainty factor for conjunctive rule, minimum value of certainty factor among the facts is used. While for disjunctive rule, maximum value of certainty factor among the facts is used.
 - **Compute the certainty factor of a hypothesis given several rules with individual certainty factors**
 - **Interpret the resulting numerical answer in regular English**
+
   Name | Certainty Value
   -----|----------------
   <p align="center">Definitely not</p> | -1.0
