@@ -19,7 +19,7 @@
   - The problem domain requires a large amount of human expertise
 - **Problem-solving approaches of an AI problem**
   - Heuristic is a rule of thumb for solving a problem. It is a set of guidelines that often  works to solve a problem. Can do things out of order.
-  - Algorithm has to execute them in a specific way. If no input, it is not going to work. Order and inputs are important is important.
+  - Algorithm has to execute them in a specific way. If no input, it is not going to work. Order and inputs are important.
 
 
 ### Problem formulation – five attributes to consider
