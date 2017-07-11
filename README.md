@@ -18,10 +18,9 @@
   - Computationally complex, cannot be solved by straightforward algorithms
   - The problem domain requires a large amount of human expertise
 - **Problem-solving approaches of an AI problem**
-  - Heuristic
-    - A rule of thumb for solving a problem
-    - It is a set of guidelines that often works to solve a problem
-  - Algorithm
+  - Heuristic is a rule of thumb for solving a problem. It is a set of guidelines that often  works to solve a problem. Can do things out of order.
+  - Algorithm has to execute them in a specific way. If no input, it is not going to work. Order and inputs are important is important.
+
 
 ### Problem formulation – five attributes to consider
 
@@ -112,46 +111,101 @@
 
 ## Chapter 3 - Logic and Knowledge Representation
 
-- Logic – PL vs FOL, translation of English statement to FOL statement
-  - PL assumes the world contains facts, FOL assumes the world contains objects, relationships, and function.
-  - FOL has more elements than PL which are variables, functions, and quantifiers.
-  - FOL provides increased expressive power in comparison with PL
+- **Discuss the limitations of propositional logic**
+  - Operates with constant object only
+  - No domain context and no domain variable
+  - Cannot say "all", "there exist" etc
+  - Propositional logic only limited to facts
+  - Some knowledge are hard or impossible to encode in the propositional logic
+    - Statements referring to groups of objects requires exhaustive enumeration of group
+    - Statements about similar objects and relations need to be enumerated
 
-- Knowledge Representation – Logic, ontology, agents
-  - Ontology
-    - The study of existence, of all kinds of entities that make up the world
-    - A representation of a shared domain of interest that utilizes a common vocabulary to describe the classes, relations, functions and other similar objects of interest
-    - Why Develop an Ontology
-      - To share common understanding of the structure of information among people or software agents
-      - To enable reuse of domain knowledge
-      - To make domain assumptions explicit
-      - To separate domain knowledge from the operational knowledge
-      - To analyze domain knowledge
-    - Knowledge Engineering Methodology
-      1. Determine the domain and scope of the ontology
-      1. Consider re-using existing ontologies
-      1. Enumerate important terms in the ontology
-      1. Define the classes and class hierarchy
-      1. Define the properties / slots /roles of the classes
-      1. Define the facets / role restrictions
-      1. Create instances
-  - Agents
-    - An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
-    - Four agent structures
-      - Simple reflex (Not coming out) agents
-      - Model-based reflex agents
-      - Goal-based agents
-      - Utility-based agents
+### Logic – PL vs FOL, translation of English statement to FOL statement
+
+- PL assumes the world contains facts, FOL assumes the world contains objects, relationships, and function.
+- FOL has more elements than PL which are variables, functions, and quantifiers.
+- FOL provides increased expressive power in comparison with PL
+
+### Knowledge Representation – Logic, ontology, agents
+
+- **Logic**
+  - Provides the formal structure and rules of inferences, without logic knowledge representation is vague and statement could be contradictory.
+
+- **Ontology**
+  - The study of existence, of all kinds of entities that make up the world
+  - A representation of a shared domain of interest that utilizes a common vocabulary to describe the classes, relations, functions and other similar objects of interest
+  - **Why Develop an Ontology**
+    - To share common understanding of the structure of information among people or software agents
+    - To enable reuse of domain knowledge
+    - To make domain assumptions explicit
+    - To separate domain knowledge from the operational knowledge
+    - To analyze domain knowledge
+  - **Knowledge Engineering Methodology**
+    1. Determine the domain and scope of the ontology
+    1. Consider re-using existing ontologies
+    1. Enumerate important terms in the ontology
+    1. Define the classes and class hierarchy
+    1. Define the properties / slots /roles of the classes
+    1. Define the facets / role restrictions
+    1. Create instances
+
+- **Agents**
+  - An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
+  - Four agent structures
+    - Simple reflex (Not coming out) agents
+    - Model-based reflex agents
+    - Goal-based agents
+    - Utility-based agents
+  - **Describe the qualities an ideal agent should possess**
+    - A rational agent chooses whichever action that is expected to maximize the value of performance measure given the percept sequence to date and prior knowledge of the environment. The definition requires information gathering to maximim future rewards. It also requires the agent to learn from percepts hence extending prior knowledge. The agent must be autonomy to compensate for incorrect prior knowledge through updating from environment.
 
 ---
 
 ### Chapter 3 & 4 Production and Expert Systems
 
-- Major components in an expert system
+- **Features of production systems that are considered advantages**
+  - Ease of expression
+    - Nature way for domain-specialists or expert to express themselves, to represent great amount of knowledge.
+  - Intuitive in nature
+    - IF-THEN nature is very intuitive way for humans to express themselves.
+  - Simplicity
+    - Production rules are very easy to develop and modify easy to understand and consistent with English language forms of expression
+
+- **What is conflict resolution and why is it necessary**
+  - Conflict resolution is a method for choosing a rule when more than one rule can be fired. When several rules are candidate for matching the antecedent / IF condition of a production rule, there must be a strategy to choose the most appropriate rule among them. There are 6 types which are:
+    - Fire the first rule that matches the contents of the memory
+    - Fire the rule with the highest priority
+    - Fire the most specific rule
+    - Fire the most recently used rule
+    - Fire the most recently added rule
+    - Don't fire a rule that has already fired
+  - Why? To maintain good functioning of the system, it is important to resolve conflicts. As such, system will be able to provide an answer.
+
+- **Discuss the problems of conflicts resolutions strategy "fire all rules"**
+  - Conflict resolution is a method to define the strategy to choose the most appropriate rule. However, "fire all rule" will give rise to more conflicts because rules will contradict with each other. It is like having no strategy. Therefore, by using "fire all rule", it might possible looping at rules for those contradicting rules, and have low efficiency because big amount of rules needed to fire.
+
+- Compare between forward chaining and backward chaining
+
+| Forward Chaining | Backward Chaining |
+|------------------|-------------------|
+| Data driven | Goal Driven |
+| Reasoning from facts to conclusion | Reasoning in reverse from a hypothesis, from a potential conclusion to the proven, to the facts that support the hypothesis.|
+| May do work that is irrelevant to goal | More efficient |
+| Good for planning, design and process monitoring | Suitable for diagnosis |
+| Find possible conclusions supported by given facts.| Find facts that supports a hypothesis |
+
+- **Give an example of a typical type of production system that would utilise Forward Chaining and explain why this is so.**
+  - Website's search engine. A website search engine prompts user for input and search for any relevant website related to the keyword. It then returns the list of related website for the user to pick. When we search for something, we still do not have a goal in mind but based on the search result, we would pick one that is closest to what we think is the goal. Hence, there are irrevant work that is done (websites that are not chosen).
+
+- **Do the same with Backward Chaining.**
+  - Medical diagnostic system. Medical staffs specify the illness on the system which then system reutnrs a list of symptoms on the illness and possible solutions, which then the staff can take action based on the list. It first asks for the illness, which is the goal. The system is asked to prove "Is the patient 125 having a fever?". It will work backwards to prove the illness. Once proven, it will provide a list of possible solutions.
+
+- **Major components in an expert system**
   - Knowledge base
   - Inference Engine
   - Explanation Facility
-- Typical design elements that constitute the expert system structure
+
+- **Typical design elements that constitute the expert system structure**
   - Agenda
   - Knowledge acquistion facility
   - Knowledge base
@@ -209,6 +263,55 @@
   - Is the problem-solving knowledge mainly heuristic and uncertain?
 - **justify design/inference decision/recommendation**
 
+- **How are ES different with conventional programs**
+
+- Conventional programs are procedural and expert system is determined by correct matching with data for forward chaining and correct matching with goals for backward chaining.
+- Es input are flexible as opposed to the rigid design of conventional programs.
+- Es utilize pattern matching to decipher the meaning of input while conventional program rely on specific input format. There is usually no explaination for conventional program on how it obtains the result but ES will have explanation facility to explain the reasoning for the result.
+
+- **What is meta-rule?**
+
+  - A meta rule is a rule that governs other rule
+  - Meta tell when to use, why used and how to use that certain rule.
+  - Why they were included in the KB?
+    - Meta knowledge can take if or then part of meta-rule to justify conclusion
+
+- **Knowledge engineering process**
+  1. KE established dialogue with human expert in order to elicit expert's knowledge
+  1. KE then codes the knowledge explicitly into KBB
+  1. Expert then evaluates the ES and gives feedback to KE
+  1. Process is repeated until system's performance is judged to be satisfactory by the expert.
+
+- **What is knowledge acquisition and why is it considered a "bottleneck in AI"**
+
+  - Knowledge acquistion refers to the acquistion of knowledge from a human expert and other sources. It is carried out by knowledge engineer who extracts expertise by conducting extensive interviews with human experts. The KE process is time consumming and labour intensive. The KE may have to interview the expert several times. The process is step by step and sequential, if no interview is done, the prototype cannot be constructed. Hence, every stage needs to be completed before the next stage begins. Therefore, this process is slow and often described as fluid flow from a bottle.
+
+- **Advantages of Expert System**
+  - Increased availability
+    - Mass production of expertise since it can be made available on a computer
+  - Reduced cost
+    - Average cost of providing expertise is greatly lowered
+  - Reduced danger
+    - ESs can be deployed in hazardous environments
+
+- **Disadvantages of expert system**
+  - Common sense
+    - In addition to a great deal of technical knowledge, human experts have common sense. It is not yet known how to give ESs common sense
+  - Creativity
+    - Human experts can respond creatively to unusual situations, ESs cannot
+  - Learning
+    - Human experts automatically adapt to changing environments; ESs must be explicitly updated. Case-based reasoning and neural networks are methods that can incorporate learning
+
+- **Characteristic of ES**
+  - High performance
+    - Expert system must be capable of responding at a level at least equal to, or better than a human expert
+    - Quality of advice must have high degree of integrity
+  - Adequate response time
+    - Expert system must perform in a reasonable time, comparable to or better than the time required by an expert to reach a decision
+    - Time constraints especially critical in the case of real-time systems
+  - Good reliability
+    - Expert system must be reliable and not be prone to crashes
+
 ## Chapter 6 - Uncertainty
 
 - **Differentiate between conjunctive and disjunctive rules**
@@ -217,14 +320,14 @@
 - **Compute the certainty factor of a hypothesis given several rules with individual certainty factors**
 - **Interpret the resulting numerical answer in regular English**
 
-  | Name | Certainty Value |
+  | <p align="center">Term</p> | <p align="center">Certainty Factor</p> |
   -----|----------------
-  |<p align="center">Definitely not</p> | -1.0 |
-  |<p align="center">Almost certainly not</p> | -0.8 |
-  |<p align="center">Probably not</p> | -0.6 |
-  |<p align="center">Maybe not</p> | -0.4 |
-  |<p align="center">Unknown</p> | -0.2 to +0.2 |
-  |<p align="center">Maybe</p> | +0.4 |
-  |<p align="center">Probably</p> | +0.6 |
-  |<p align="center">Almost certainly</p> | +0.8 |
-  |<p align="center">Definitely</p> | +1.0 |
+  |<p align="center">Definitely not</p> | <p align="center">-1.0</p> |
+  |<p align="center">Almost certainly not</p> | <p align="center">-0.8</p> |
+  |<p align="center">Probably not</p> | <p align="center">-0.6</p> |
+  |<p align="center">Maybe not</p> | <p align="center">-0.4</p> |
+  |<p align="center">Unknown</p> | <p align="center">-0.2 to +0.2</p> |
+  |<p align="center">Maybe</p> | <p align="center">+0.4</p> |
+  |<p align="center">Probably</p> | <p align="center">+0.6</p> |
+  |<p align="center">Almost certainly</p> | <p align="center">+0.8</p> |
+  |<p align="center">Definitely</p> | <p align="center">+1.0</p> |
