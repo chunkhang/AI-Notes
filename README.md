@@ -1,5 +1,7 @@
 # CSC3026 Artificial Intelligence Examination Review (March 2017)
 
+![Brain](https://www.frontiersin.org/files/special%20topics/5845/thumb_400.jpg)
+
 ## Details
 
 - Date and time: 12th July 2017, 9.00am
